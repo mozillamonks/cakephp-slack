@@ -1,0 +1,24 @@
+{
+    "name": "HirokiYagyu/Slack",
+    "description": "CakePHP Slack WebAPI plugin.",
+    "type": "cakephp-plugin",
+    "keywords": ["cakephp", "slack"],
+    "homepage": "https://github.com/cakephp/debug_kit",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hiroki Yagyu",
+            "role": "Author"
+        }
+    ],
+    "support": {
+        "source": "https://github.com/HirokiYagyu/Slack"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "composer/installers": "*"
+    },
+    "extra": {
+        "installer-name": "Slack"
+    }
+}
