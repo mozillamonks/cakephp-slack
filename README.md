@@ -15,4 +15,3 @@ In `app/config/bootstrap.php`
 CakePlugin::load('Slack',['bootstrap'=>true]);
 ```
 
-@link http://book.cakephp.org/3.0/en/plugins.html#loading-a-plugin
