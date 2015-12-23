@@ -17,7 +17,7 @@ App::uses('BaseComponent', 'Slack.Controller/Component');
  */
 class UsersComponent extends BaseComponent
 {
-    protected static $_method = 'usergroups.users';
+    protected static $_method = 'users';
 
     /** Authentication token. */
     const OPTION_TOKEN = 'token';
