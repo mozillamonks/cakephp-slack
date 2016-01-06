@@ -125,74 +125,77 @@ class FilesComponent extends BaseComponent
      * It can be filtered and sliced in various ways.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Files->fetchList();
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "files": [
-     *         {
-     *             "id": "F01234567",
-     *             "created": 1440000000,
-     *             "timestamp": 1440000000,
-     *             "name": "sample.txt",
-     *             "title": "Untitled",
-     *             "mimetype": "text/plain",
-     *             "filetype": "text",
-     *             "pretty_type": "Plain Text",
-     *             "user": "U01234567",
-     *             "editable": true,
-     *             "size": 12,
-     *             "mode": "snippet",
-     *             "is_external": false,
-     *             "external_type": "",
-     *             "is_public": true,
-     *             "public_url_shared": false,
-     *             "display_as_bot": false,
-     *             "username": "",
-     *             "url": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/sample.txt",
-     *             "url_download": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/download/sample.txt",
-     *             "url_private": "https://files.slack.com/files-pri/T01234567-F01234567/sample.txt",
-     *             "url_private_download": "https://files.slack.com/files-pri/T01234567-F01234567/download/sample.txt",
-     *             "permalink": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt",
-     *             "permalink_public": "https://slack-files.com/T01234567-F01234567-0000000000",
-     *             "edit_link": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt/edit",
-     *             "preview": "Hello Slack!",
-     *             "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\">\n<div class=\"CodeMirror-code\">\n<div><pre>Hello Slack!</pre></div>\n</div>\n</div>\n",
-     *             "lines": 1,
-     *             "lines_more": 0,
-     *             "channels": [
-     *                 "C0EPZ563D"
-     *             ],
-     *             "groups": [],
-     *             "ims": [],
-     *             "comments_count": 0
-     *         }
-     *     ],
-     *     "paging": {
-     *         "count": 100,
-     *         "total": 1,
-     *         "page": 1,
-     *         "pages": 1
+     *   "ok": true,
+     *   "files": [
+     *     {
+     *       "id": "F01234567",
+     *       "created": 1440000000,
+     *       "timestamp": 1440000000,
+     *       "name": "sample.txt",
+     *       "title": "Untitled",
+     *       "mimetype": "text/plain",
+     *       "filetype": "text",
+     *       "pretty_type": "Plain Text",
+     *       "user": "U01234567",
+     *       "editable": true,
+     *       "size": 12,
+     *       "mode": "snippet",
+     *       "is_external": false,
+     *       "external_type": "",
+     *       "is_public": true,
+     *       "public_url_shared": false,
+     *       "display_as_bot": false,
+     *       "username": "",
+     *       "url": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/sample.txt",
+     *       "url_download": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/download/sample.txt",
+     *       "url_private": "https://files.slack.com/files-pri/T01234567-F01234567/sample.txt",
+     *       "url_private_download": "https://files.slack.com/files-pri/T01234567-F01234567/download/sample.txt",
+     *       "permalink": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt",
+     *       "permalink_public": "https://slack-files.com/T01234567-F01234567-0000000000",
+     *       "edit_link": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt/edit",
+     *       "preview": "Hello Slack!",
+     *       "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\">\n<div class=\"CodeMirror-code\">\n<div><pre>Hello Slack!</pre></div>\n</div>\n</div>\n",
+     *       "lines": 1,
+     *       "lines_more": 0,
+     *       "channels": [
+     *         "C0EPZ563D"
+     *       ],
+     *       "groups": [],
+     *       "ims": [],
+     *       "comments_count": 0
      *     }
+     *   ],
+     *   "paging": {
+     *     "count": 100,
+     *     "total": 1,
+     *     "page": 1,
+     *     "pages": 1
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *     <dt>FilesComponent::OPTION_TOKEN</dt>
-     *       <dd>Authentication token (Requires scope: `files:read`)</dd>
-     *     <dt>FilesComponent::OPTION_USER</dt>
-     *       <dd>Filter files created by a single user.</dd>
-     *     <dt>FilesComponent::OPTION_TS_FROM</dt>
-     *       <dd>Filter files created after this timestamp (inclusive).</dd>
-     *     <dt>FilesComponent::OPTION_TS_TO</dt>
-     *       <dd>Filter files created before this timestamp (inclusive).</dd>
-     *     <dt>FilesComponent::OPTION_TYPES</dt>
-     *       <dd>Filter files by type:
+     * FilesComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `files:read`)
+     *
+     * FilesComponent::OPTION_USER
+     * :  Filter files created by a single user.
+     *
+     * FilesComponent::OPTION_TS_FROM
+     * :  Filter files created after this timestamp (inclusive).
+     *
+     * FilesComponent::OPTION_TS_TO
+     * :  Filter files created before this timestamp (inclusive).
+     *
+     * FilesComponent::OPTION_TYPES
+     * :  Filter files by type:
      *         <ul>
      *           <li>`all` - All files</li>
      *           <li>`posts` - Posts</li>
@@ -204,12 +207,12 @@ class FilesComponent extends BaseComponent
      *         </ul>
      *         You can pass multiple values in the types argument, like `types=posts,snippets`.
      *         The default value is `all`, which does not filter the list.
-     *       </dd>
-     *     <dt>FilesComponent::OPTION_COUNT</dt>
-     *       <dd>Number of items to return per page.</dd>
-     *     <dt>FilesComponent::OPTION_PAGE</dt>
-     *       <dd>Page number of results to return.</dd>
-     * </dl>
+     *
+     * FilesComponent::OPTION_COUNT
+     * :  Number of items to return per page.
+     *
+     * FilesComponent::OPTION_PAGE
+     * :  Page number of results to return.
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.
@@ -238,76 +241,77 @@ class FilesComponent extends BaseComponent
      * This method returns information about a file in your team.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Files->fetchInfo( 'F01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "file": {
-     *         "id": "F01234567",
-     *         "created": 1440000000,
-     *         "timestamp": 1440000000,
-     *         "name": "sample.txt",
-     *         "title": "Untitled",
-     *         "mimetype": "text/plain",
-     *         "filetype": "text",
-     *         "pretty_type": "Plain Text",
-     *         "user": "U01234567",
-     *         "editable": true,
-     *         "size": 12,
-     *         "mode": "snippet",
-     *         "is_external": false,
-     *         "external_type": "",
-     *         "is_public": true,
-     *         "public_url_shared": false,
-     *         "display_as_bot": false,
-     *         "username": "",
-     *         "url": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/sample.txt",
-     *         "url_download": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/download/sample.txt",
-     *         "url_private": "https://files.slack.com/files-pri/T01234567-F01234567/sample.txt",
-     *         "url_private_download": "https://files.slack.com/files-pri/T01234567-F01234567/download/sample.txt",
-     *         "permalink": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt",
-     *         "permalink_public": "https://slack-files.com/T01234567-F01234567-0000000000",
-     *         "edit_link": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt/edit",
-     *         "preview": "Hello Slack!",
-     *         "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\">\n<div class=\"CodeMirror-code\">\n<div><pre>Hello Slack!</pre></div>\n</div>\n</div>\n",
-     *         "lines": 1,
-     *         "lines_more": 0,
-     *         "channels": [
-     *             "C0EPZ563D"
-     *         ],
-     *         "groups": [],
-     *         "ims": [],
-     *         "comments_count": 0
-     *     },
-     *     "content": "Hello Slack!",
-     *     "is_truncated": false,
-     *     "content_highlight_html": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\">\n<div class=\"CodeMirror-code\">\n<div><pre>Hello Slack!</pre></div>\n</div>\n</div>\n",
-     *     "content_highlight_css": "\n.CodeMirror {\n  font-family: monospace;\n  height: auto;\n}\n\n.CodeMirror pre {\n  padding: 0;\n  background: transparent;\n  font-family: inherit;\n  font-size: inherit;\n  margin: 0;\n  white-space: pre;\n  word-wrap: normal;\n  line-height: inherit;\n  color: inherit;\n  z-index: 2;\n  position: relative;\n  overflow: visible;\n}\n\n.cm-keyword {color: #708;}\n.cm-atom {color: #219;}\n.cm-number {color: #164;}\n.cm-def {color: #00f;}\n.cm-variable-2 {color: #05a;}\n.cm-variable-3 {color: #085;}\n.cm-comment {color: #a50;}\n.cm-string {color: #a11;}\n.cm-string-2 {color: #f50;}\n.cm-meta {color: #555;}\n.cm-qualifier {color: #555;}\n.cm-builtin {color: #30a;}\n.cm-bracket {color: #997;}\n.cm-tag {color: #170;}\n.cm-attribute {color: #00c;}\n.cm-header {color: blue;}\n",
-     *     "comments": [],
-     *     "paging": {
-     *         "count": 100,
-     *         "total": 0,
-     *         "page": 1,
-     *         "pages": 0
-     *     }
+     *   "ok": true,
+     *   "file": {
+     *     "id": "F01234567",
+     *     "created": 1440000000,
+     *     "timestamp": 1440000000,
+     *     "name": "sample.txt",
+     *     "title": "Untitled",
+     *     "mimetype": "text/plain",
+     *     "filetype": "text",
+     *     "pretty_type": "Plain Text",
+     *     "user": "U01234567",
+     *     "editable": true,
+     *     "size": 12,
+     *     "mode": "snippet",
+     *     "is_external": false,
+     *     "external_type": "",
+     *     "is_public": true,
+     *     "public_url_shared": false,
+     *     "display_as_bot": false,
+     *     "username": "",
+     *     "url": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/sample.txt",
+     *     "url_download": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/download/sample.txt",
+     *     "url_private": "https://files.slack.com/files-pri/T01234567-F01234567/sample.txt",
+     *     "url_private_download": "https://files.slack.com/files-pri/T01234567-F01234567/download/sample.txt",
+     *     "permalink": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt",
+     *     "permalink_public": "https://slack-files.com/T01234567-F01234567-0000000000",
+     *     "edit_link": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt/edit",
+     *     "preview": "Hello Slack!",
+     *     "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\">\n<div class=\"CodeMirror-code\">\n<div><pre>Hello Slack!</pre></div>\n</div>\n</div>\n",
+     *     "lines": 1,
+     *     "lines_more": 0,
+     *     "channels": [
+     *       "C0EPZ563D"
+     *     ],
+     *     "groups": [],
+     *     "ims": [],
+     *     "comments_count": 0
+     *   },
+     *   "content": "Hello Slack!",
+     *   "is_truncated": false,
+     *   "content_highlight_html": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\">\n<div class=\"CodeMirror-code\">\n<div><pre>Hello Slack!</pre></div>\n</div>\n</div>\n",
+     *   "content_highlight_css": "\n.CodeMirror {\n  font-family: monospace;\n  height: auto;\n}\n\n.CodeMirror pre {\n  padding: 0;\n  background: transparent;\n  font-family: inherit;\n  font-size: inherit;\n  margin: 0;\n  white-space: pre;\n  word-wrap: normal;\n  line-height: inherit;\n  color: inherit;\n  z-index: 2;\n  position: relative;\n  overflow: visible;\n}\n\n.cm-keyword {color: #708;}\n.cm-atom {color: #219;}\n.cm-number {color: #164;}\n.cm-def {color: #00f;}\n.cm-variable-2 {color: #05a;}\n.cm-variable-3 {color: #085;}\n.cm-comment {color: #a50;}\n.cm-string {color: #a11;}\n.cm-string-2 {color: #f50;}\n.cm-meta {color: #555;}\n.cm-qualifier {color: #555;}\n.cm-builtin {color: #30a;}\n.cm-bracket {color: #997;}\n.cm-tag {color: #170;}\n.cm-attribute {color: #00c;}\n.cm-header {color: blue;}\n",
+     *   "comments": [],
+     *   "paging": {
+     *     "count": 100,
+     *     "total": 0,
+     *     "page": 1,
+     *     "pages": 0
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *     <dt>FilesComponent::OPTION_TOKEN</dt>
-     *       <dd>Authentication token (Requires scope: `files:read`)</dd>
-     *     <dt>FilesComponent::OPTION_FILE</dt>
-     *       <dd>File to fetch info for.</dd>
-     *     <dt>FilesComponent::OPTION_COUNT</dt>
-     *       <dd>Number of items to return per page.</dd>
-     *     <dt>FilesComponent::OPTION_PAGE</dt>
-     *       <dd>Page number of results to return.</dd>
-     * </dl>
+     * FilesComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `files:read`)
+     *
+     * FilesComponent::OPTION_FILE
+     * :  File to fetch info for.
+     *
+     * FilesComponent::OPTION_COUNT
+     * :  Number of items to return per page.
+     *
+     * FilesComponent::OPTION_PAGE
+     * :  Page number of results to return.
      *
      * @param string $file ファイル ID.
      * @param array $option オプション.
@@ -334,7 +338,7 @@ class FilesComponent extends BaseComponent
      * This method allows you to create or upload an existing file.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Files->upload([
      *     FilesComponent::OPTION_CONTENT => 'Hello Slack!',
      *     FilesComponent::OPTION_FILENAME => 'sample.txt',
@@ -343,66 +347,71 @@ class FilesComponent extends BaseComponent
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "file": {
-     *         "id": "F01234567",
-     *         "created": 1440000000,
-     *         "timestamp": 1440000000,
-     *         "name": "-.txt",
-     *         "title": "Untitled",
-     *         "mimetype": "text/plain",
-     *         "filetype": "text",
-     *         "pretty_type": "Plain Text",
-     *         "user": "U01234567",
-     *         "editable": true,
-     *         "size": 12,
-     *         "mode": "snippet",
-     *         "is_external": false,
-     *         "external_type": "",
-     *         "is_public": true,
-     *         "public_url_shared": false,
-     *         "display_as_bot": false,
-     *         "username": "",
-     *         "url": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/sample.txt",
-     *         "url_download": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/download/sample.txt",
-     *         "url_private": "https://files.slack.com/files-pri/T01234567-F01234567/sample.txt",
-     *         "url_private_download": "https://files.slack.com/files-pri/T01234567-F01234567/download/sample.txt",
-     *         "permalink": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt",
-     *         "permalink_public": "https://slack-files.com/T01234567-F01234567-0000000000",
-     *         "edit_link": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt/edit",
-     *         "preview": "Hello Slack!",
-     *         "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\">\n<div class=\"CodeMirror-code\">\n<div><pre>Hello Slack!</pre></div>\n</div>\n</div>\n",
-     *         "lines": 1,
-     *         "lines_more": 0,
-     *         "channels": [],
-     *         "groups": [],
-     *         "ims": [],
-     *         "comments_count": 0
-     *     }
+     *   "ok": true,
+     *   "file": {
+     *     "id": "F01234567",
+     *     "created": 1440000000,
+     *     "timestamp": 1440000000,
+     *     "name": "-.txt",
+     *     "title": "Untitled",
+     *     "mimetype": "text/plain",
+     *     "filetype": "text",
+     *     "pretty_type": "Plain Text",
+     *     "user": "U01234567",
+     *     "editable": true,
+     *     "size": 12,
+     *     "mode": "snippet",
+     *     "is_external": false,
+     *     "external_type": "",
+     *     "is_public": true,
+     *     "public_url_shared": false,
+     *     "display_as_bot": false,
+     *     "username": "",
+     *     "url": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/sample.txt",
+     *     "url_download": "https://slack-files.com/files-pub/T01234567-F01234567-0000000000/download/sample.txt",
+     *     "url_private": "https://files.slack.com/files-pri/T01234567-F01234567/sample.txt",
+     *     "url_private_download": "https://files.slack.com/files-pri/T01234567-F01234567/download/sample.txt",
+     *     "permalink": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt",
+     *     "permalink_public": "https://slack-files.com/T01234567-F01234567-0000000000",
+     *     "edit_link": "https://{your_team}.slack.com/files/{your_name}/F01234567/sample.txt/edit",
+     *     "preview": "Hello Slack!",
+     *     "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\">\n<div class=\"CodeMirror-code\">\n<div><pre>Hello Slack!</pre></div>\n</div>\n</div>\n",
+     *     "lines": 1,
+     *     "lines_more": 0,
+     *     "channels": [],
+     *     "groups": [],
+     *     "ims": [],
+     *     "comments_count": 0
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>FilesComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `files:write:user`)</dd>
-     *   <dt>FilesComponent::OPTION_FILE</dt>
-     *     <dd>File contents via `multipart/form-data`.</dd>
-     *   <dt>FilesComponent::OPTION_CONTENT</dt>
-     *     <dd>File contents via a POST var.</dd>
-     *   <dt>FilesComponent::OPTION_FILETYPE</dt>
-     *     <dd>Slack-internal file type identifier.</dd>
-     *   <dt>FilesComponent::OPTION_FILENAME</dt>
-     *     <dd>Filename of file.</dd>
-     *   <dt>FilesComponent::OPTION_TITLE</dt>
-     *     <dd>Title of file.</dd>
-     *   <dt>FilesComponent::OPTION_INITIAL_COMMENT</dt>
-     *     <dd>Initial comment to add to file.</dd>
-     *   <dt>FilesComponent::OPTION_CHANNELS</dt>
-     *     <dd>Comma separated list of channels to share the file into.</dd>
-     * </dl>
+     * FilesComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `files:write:user`)
+     *
+     * FilesComponent::OPTION_FILE
+     * :  File contents via `multipart/form-data`.
+     *
+     * FilesComponent::OPTION_CONTENT
+     * :  File contents via a POST var.
+     *
+     * FilesComponent::OPTION_FILETYPE
+     * :  Slack-internal file type identifier.
+     *
+     * FilesComponent::OPTION_FILENAME
+     * :  Filename of file.
+     *
+     * FilesComponent::OPTION_TITLE
+     * :  Title of file.
+     *
+     * FilesComponent::OPTION_INITIAL_COMMENT
+     * :  Initial comment to add to file.
+     *
+     * FilesComponent::OPTION_CHANNELS
+     * :  Comma separated list of channels to share the file into.
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.
@@ -432,24 +441,23 @@ class FilesComponent extends BaseComponent
      * This method deletes a file from your team.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Files->delete( 'F01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
+     *   "ok": true,
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>FilesComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `files:write:user`)</dd>
-     *   <dt>FilesComponent::OPTION_FILE</dt>
-     *     <dd>ID of file to delete.</dd>
-     * </dl>
+     * FilesComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `files:write:user`)
+     *
+     * FilesComponent::OPTION_FILE
+     * :  ID of file to delete.
      *
      * @param string $file ファイル ID.
      * @param array $option オプション.

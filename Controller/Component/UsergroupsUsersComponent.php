@@ -50,31 +50,29 @@ class UsergroupsUsersComponent extends BaseComponent
      * This method returns a list of all users within a user group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $UsergroupsUsers->list( 'S01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": false,
+     *   "ok": false,
+     *   "error": "my_error",
+     *   "args": {
      *     "error": "my_error",
-     *     "args": {
-     *         "error": "my_error",
-     *         "foo": "bar"
-     *     }
+     *     "foo": "bar"
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *    <dt>UsergroupsUsersComponent::OPTION_TOKEN</dt>
-     *      <dd>Authentication token (Requires scope: `usergroups:read`)</dd>
-     *    <dt>UsergroupsUsersComponent::OPTION_USERGROUP</dt>
-     *      <dd>The encoded ID of the user group to update.</dd>
-     *    <dt>UsergroupsUsersComponent::OPTION_INCLUDE_DISABLED</dt>
-     *      <dd>Allow results that involve disabled user groups.</dd>
-     * </dl>
+     * UsergroupsUsersComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `usergroups:read`)
+     * UsergroupsUsersComponent::OPTION_USERGROUP
+     * :  The encoded ID of the user group to update.
+     * UsergroupsUsersComponent::OPTION_INCLUDE_DISABLED
+     * :  Allow results that involve disabled user groups.
      *
      * @param string $usergroup ユーザーグループ ID.
      * @param array $option オプション.
@@ -101,33 +99,31 @@ class UsergroupsUsersComponent extends BaseComponent
      * This method replaces all users in a user group with the list of users provided in the users parameter.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $UsergroupsUsers->list( 'S01234567',['U01234567'] );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": false,
+     *   "ok": false,
+     *   "error": "my_error",
+     *   "args": {
      *     "error": "my_error",
-     *     "args": {
-     *         "error": "my_error",
-     *         "foo": "bar"
-     *     }
+     *     "foo": "bar"
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *    <dt>UsergroupsUsersComponent::OPTION_TOKEN</dt>
-     *      <dd>Authentication token (Requires scope: `usergroups:write`)</dd>
-     *    <dt>UsergroupsUsersComponent::OPTION_USERGROUP</dt>
-     *      <dd>The encoded ID of the user group to update.</dd>
-     *    <dt>UsergroupsUsersComponent::OPTION_USERS</dt>
-     *      <dd>A comma separated string of encoded user IDs that represent the entire list of users for the user group.</dd>
-     *    <dt>UsergroupsUsersComponent::OPTION_INCLUDE_COUNT</dt>
-     *      <dd>Include the number of users in the user group.</dd>
-     * </dl>
+     * UsergroupsUsersComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `usergroups:write`)
+     * UsergroupsUsersComponent::OPTION_USERGROUP
+     * :  The encoded ID of the user group to update.
+     * UsergroupsUsersComponent::OPTION_USERS
+     * :  A comma separated string of encoded user IDs that represent the entire list of users for the user group.
+     * UsergroupsUsersComponent::OPTION_INCLUDE_COUNT
+     * :  Include the number of users in the user group.
      *
      * @param string $usergroup ユーザーグループ ID.
      * @param array $option オプション.

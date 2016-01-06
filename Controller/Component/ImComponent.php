@@ -62,24 +62,23 @@ class ImComponent extends BaseComponent
      * This method closes a direct message channel.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Im->close( 'D01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>ImComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `im:write`)</dd>
-     *   <dt>ImComponent::OPTION_CHANNEL</dt>
-     *     <dd>Direct message channel to close.</dd>
-     * </dl>
+     * ImComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `im:write`)
+     *
+     * ImComponent::OPTION_CHANNEL
+     * :  Direct message channel to close.
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -105,43 +104,47 @@ class ImComponent extends BaseComponent
      * To read the entire history for a direct message channel, call the method with no `latest` or `oldest` arguments, and then continue paging using the instructions below.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Im->fetchHistory( 'D01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "messages": [
-     *         {
-     *             "type": "message",
-     *             "user": "U01234567",
-     *             "text": "Hello!",
-     *             "ts": "1440000000.000001"
-     *         }
-     *     ],
-     *     "has_more": false
+     *   "ok": true,
+     *   "messages": [
+     *     {
+     *       "type": "message",
+     *       "user": "U01234567",
+     *       "text": "Hello!",
+     *       "ts": "1440000000.000001"
+     *     }
+     *   ],
+     *   "has_more": false
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>ImComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `im:history`)</dd>
-     *   <dt>ImComponent::OPTION_CHANNEL</dt>
-     *     <dd>Direct message channel to fetch history for.</dd>
-     *   <dt>ImComponent::OPTION_LATEST</dt>
-     *     <dd>End of time range of messages to include in results.</dd>
-     *   <dt>ImComponent::OPTION_OLDEST</dt>
-     *     <dd>Start of time range of messages to include in results.</dd>
-     *   <dt>ImComponent::OPTION_INCLUSIVE</dt>
-     *     <dd>Include messages with latest or oldest timestamp in results.</dd>
-     *   <dt>ImComponent::OPTION_COUNT</dt>
-     *     <dd>Number of messages to return, between 1 and 1000.</dd>
-     *   <dt>ImComponent::OPTION_UNREADS</dt>
-     *     <dd>Include `unread_count_display` in the output?</dd>
-     * </dl>
+     * ImComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `im:history`)
+     *
+     * ImComponent::OPTION_CHANNEL
+     * :  Direct message channel to fetch history for.
+     *
+     * ImComponent::OPTION_LATEST
+     * :  End of time range of messages to include in results.
+     *
+     * ImComponent::OPTION_OLDEST
+     * :  Start of time range of messages to include in results.
+     *
+     * ImComponent::OPTION_INCLUSIVE
+     * :  Include messages with latest or oldest timestamp in results.
+     *
+     * ImComponent::OPTION_COUNT
+     * :  Number of messages to return, between 1 and 1000.
+     *
+     * ImComponent::OPTION_UNREADS
+     * :  Include `unread_count_display` in the output?
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -171,31 +174,29 @@ class ImComponent extends BaseComponent
      * This method returns a list of all im channels that the user has.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Im->fetchList();
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "ims": [
-     *         {
-     *             "id": "D01234567",
-     *             "is_im": true,
-     *             "user": "U01234567",
-     *             "created": 1440000000,
-     *             "is_user_deleted": false
-     *         }
-     *     ]
+     *   "ok": true,
+     *   "ims": [
+     *     {
+     *       "id": "D01234567",
+     *       "is_im": true,
+     *       "user": "U01234567",
+     *       "created": 1440000000,
+     *       "is_user_deleted": false
+     *     }
+     *   ]
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>ImComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `im:read`)</dd>
-     * </dl>
+     * ImComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `im:read`)
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.
@@ -218,26 +219,26 @@ class ImComponent extends BaseComponent
      * This method moves the read cursor in a direct message channel.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Im->mark( 'D01234567', '1440000000.000001' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>ImComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `im:write`)</dd>
-     *   <dt>ImComponent::OPTION_CHANNEL</dt>
-     *     <dd>Direct message channel to set reading cursor in.</dd>
-     *   <dt>ImComponent::OPTION_TS</dt>
-     *     <dd>Timestamp of the most recently seen message.</dd>
-     * </dl>
+     * ImComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `im:write`)
+     *
+     * ImComponent::OPTION_CHANNEL
+     * :  Direct message channel to set reading cursor in.
+     *
+     * ImComponent::OPTION_TS
+     * :  Timestamp of the most recently seen message.
      *
      * @param string $channel グループ名.
      * @param string $timestamp read cursor を移動したいメッセージの投稿日時(UNIX TIME).
@@ -264,29 +265,28 @@ class ImComponent extends BaseComponent
      * This method opens a direct message channel with another member of your Slack team.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Im->open( 'D01234568' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "no_op": true,
-     *     "already_open": true,
-     *     "channel": {
-     *         "id": "D01234568"
-     *     }
+     *   "ok": true,
+     *   "no_op": true,
+     *   "already_open": true,
+     *   "channel": {
+     *     "id": "D01234568"
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>ImComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `im:write`)</dd>
-     *   <dt>ImComponent::OPTION_USER</dt>
-     *     <dd>User to open a direct message channel with.</dd>
-     * </dl>
+     * ImComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `im:write`)
+     *
+     * ImComponent::OPTION_USER
+     * :  User to open a direct message channel with.
      *
      * @param string $user ユーザ ID.
      * @param array $option オプション.

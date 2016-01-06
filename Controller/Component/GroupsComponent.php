@@ -74,24 +74,23 @@ class GroupsComponent extends BaseComponent
      * This method archives a channel.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->archive( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Private group to archive.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Private group to archive.
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -116,24 +115,23 @@ class GroupsComponent extends BaseComponent
      * This method closes a private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->close( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *     <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *       <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *     <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *       <dd>Group to close.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to close.
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -158,51 +156,50 @@ class GroupsComponent extends BaseComponent
      * This method creates a private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->create( 'secretplans' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "group": {
-     *         "id": "G01234567",
-     *         "name": "secretplans",
-     *         "is_group": true,
-     *         "created": 1440000000,
-     *         "creator": "U01234567",
-     *         "is_archived": false,
-     *         "is_mpim": false,
-     *         "is_open": true,
-     *         "last_read": "0000000000.000000",
-     *         "latest": null,
-     *         "unread_count": 0,
-     *         "unread_count_display": 0,
-     *         "members": [
-     *             "U01234567"
-     *         ],
-     *         "topic": {
-     *             "value": "",
-     *             "creator": "",
-     *             "last_set": 0
-     *         },
-     *         "purpose": {
-     *             "value": "",
-     *             "creator": "",
-     *             "last_set": 0
-     *         }
+     *   "ok": true,
+     *   "group": {
+     *     "id": "G01234567",
+     *     "name": "secretplans",
+     *     "is_group": true,
+     *     "created": 1440000000,
+     *     "creator": "U01234567",
+     *     "is_archived": false,
+     *     "is_mpim": false,
+     *     "is_open": true,
+     *     "last_read": "0000000000.000000",
+     *     "latest": null,
+     *     "unread_count": 0,
+     *     "unread_count_display": 0,
+     *     "members": [
+     *       "U01234567"
+     *     ],
+     *     "topic": {
+     *       "value": "",
+     *       "creator": "",
+     *       "last_set": 0
+     *     },
+     *     "purpose": {
+     *       "value": "",
+     *       "creator": "",
+     *       "last_set": 0
      *     }
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *     <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *       <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *     <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *       <dd>Group to close.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to close.
      *
      * @param string $name グループ名.
      * @param array $option オプション.
@@ -249,46 +246,45 @@ class GroupsComponent extends BaseComponent
      * This will only be returned for members of both groups, so will not be visible to any newly invited members.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->createChild( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "group": {
-     *         "id": "G01234568",
-     *         "name": "secretplans",
-     *         "is_group": true,
-     *         "created": 1440000000,
-     *         "creator": "U01234567",
-     *         "is_archived": false,
-     *         "is_mpim": false,
-     *         "members": [
-     *             "U01234567"
-     *         ],
-     *         "topic": {
-     *             "value": "",
-     *             "creator": "",
-     *             "last_set": 0
-     *         },
-     *         "purpose": {
-     *             "value": "",
-     *             "creator": "",
-     *             "last_set": 0
-     *         }
+     *   "ok": true,
+     *   "group": {
+     *     "id": "G01234568",
+     *     "name": "secretplans",
+     *     "is_group": true,
+     *     "created": 1440000000,
+     *     "creator": "U01234567",
+     *     "is_archived": false,
+     *     "is_mpim": false,
+     *     "members": [
+     *       "U01234567"
+     *     ],
+     *     "topic": {
+     *       "value": "",
+     *       "creator": "",
+     *       "last_set": 0
+     *     },
+     *     "purpose": {
+     *       "value": "",
+     *       "creator": "",
+     *       "last_set": 0
      *     }
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *     <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *       <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *     <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *       <dd>Group to clone and archive.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to clone and archive.
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -314,45 +310,49 @@ class GroupsComponent extends BaseComponent
      * To read the entire history for a group, call the method with no `latest` or `oldest` arguments, and then continue paging using the instructions below.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->fetchHistory( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      *
      * {
-     *     "ok": true,
-     *     "messages": [
-     *         {
-     *             "user": "U01234567",
-     *             "type": "message",
-     *             "subtype": "group_archive",
-     *             "text": "<@U01234567|user-name-sample> archived the private channel",
-     *             "ts": "1440000000.000001"
-     *         },
-     *     ],
-     *     "has_more": false
+     *   "ok": true,
+     *   "messages": [
+     *     {
+     *       "user": "U01234567",
+     *       "type": "message",
+     *       "subtype": "group_archive",
+     *       "text": "<@U01234567|user-name-sample> archived the private channel",
+     *       "ts": "1440000000.000001"
+     *     },
+     *   ],
+     *   "has_more": false
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *     <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *       <dd>Authentication token (Requires scope: `groups:history`)</dd>
-     *     <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *       <dd>Group to fetch history for.</dd>
-     *     <dt>GroupsComponent::OPTION_LATEST</dt>
-     *       <dd>End of time range of messages to include in results.</dd>
-     *     <dt>GroupsComponent::OPTION_OLDEST</dt>
-     *       <dd>Start of time range of messages to include in results.</dd>
-     *     <dt>GroupsComponent::OPTION_INCLUSIVE</dt>
-     *       <dd>Include messages with latest or oldest timestamp in results.</dd>
-     *     <dt>GroupsComponent::OPTION_COUNT</dt>
-     *       <dd>Number of messages to return, between 1 and 1000.</dd>
-     *     <dt>GroupsComponent::OPTION_UNREADS</dt>
-     *       <dd>Include `unread_count_display` in the output?</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:history`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to fetch history for.
+     *
+     * GroupsComponent::OPTION_LATEST
+     * :  End of time range of messages to include in results.
+     *
+     * GroupsComponent::OPTION_OLDEST
+     * :  Start of time range of messages to include in results.
+     *
+     * GroupsComponent::OPTION_INCLUSIVE
+     * :  Include messages with latest or oldest timestamp in results.
+     *
+     * GroupsComponent::OPTION_COUNT
+     * :  Number of messages to return, between 1 and 1000.
+     *
+     * GroupsComponent::OPTION_UNREADS
+     * :  Include `unread_count_display` in the output?
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -380,57 +380,56 @@ class GroupsComponent extends BaseComponent
      * グループ情報を取得する.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->fetchInfo( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "group": {
-     *         "id": "G01234567",
-     *         "name": "secretplans-archived",
-     *         "is_group": true,
-     *         "created": 1440000000,
-     *         "creator": "U01234567",
-     *         "is_archived": true,
-     *         "is_mpim": false,
-     *         "is_open": true,
-     *         "last_read": "1440000000.000001",
-     *         "latest": {
-     *             "user": "U01234567",
-     *             "type": "message",
-     *             "subtype": "group_archive",
-     *             "text": "<@U01234567|user-name-sample> archived the private channel",
-     *             "ts": "1440000000.000001"
-     *         },
-     *         "unread_count": 0,
-     *         "unread_count_display": 0,
-     *         "members": [
-     *             "U01234567"
-     *         ],
-     *         "topic": {
-     *             "value": "",
-     *             "creator": "",
-     *             "last_set": 0
-     *         },
-     *         "purpose": {
-     *             "value": "",
-     *             "creator": "",
-     *             "last_set": 0
-     *         }
+     *   "ok": true,
+     *   "group": {
+     *     "id": "G01234567",
+     *     "name": "secretplans-archived",
+     *     "is_group": true,
+     *     "created": 1440000000,
+     *     "creator": "U01234567",
+     *     "is_archived": true,
+     *     "is_mpim": false,
+     *     "is_open": true,
+     *     "last_read": "1440000000.000001",
+     *     "latest": {
+     *       "user": "U01234567",
+     *       "type": "message",
+     *       "subtype": "group_archive",
+     *       "text": "<@U01234567|user-name-sample> archived the private channel",
+     *       "ts": "1440000000.000001"
+     *     },
+     *     "unread_count": 0,
+     *     "unread_count_display": 0,
+     *     "members": [
+     *       "U01234567"
+     *     ],
+     *     "topic": {
+     *       "value": "",
+     *       "creator": "",
+     *       "last_set": 0
+     *     },
+     *     "purpose": {
+     *       "value": "",
+     *       "creator": "",
+     *       "last_set": 0
      *     }
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:read`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Group to get info on.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:read`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to get info on.
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -458,60 +457,60 @@ class GroupsComponent extends BaseComponent
      * To invite a new member to a group without giving them access to the archives of the group call the `groups.createChild` method before inviting.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->invite( 'G01234567', 'U01234568' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "group": {
-     *         "id": "G01234567",
-     *         "name": "secretplans-archived",
-     *         "is_group": true,
-     *         "created": 1440000000,
-     *         "creator": "U01234567",
-     *         "is_archived": false,
-     *         "is_mpim": false,
-     *         "is_open": true,
-     *         "last_read": "1440000000.000001",
-     *         "latest": {
-     *             "user": "U01234567",
-     *             "type": "message",
-     *             "subtype": "group_unarchive",
-     *             "text": "<@U01234567|user-name-sample> un-archived the private channel",
-     *             "ts": "1440000000.000001"
-     *         },
-     *         "unread_count": 0,
-     *         "unread_count_display": 0,
-     *         "members": [
-     *             "U01234567",
-     *             "U01234568"
-     *         ],
-     *         "topic": {
-     *             "value": "",
-     *             "creator": "",
-     *             "last_set": 0
-     *         },
-     *         "purpose": {
-     *             "value": "",
-     *             "creator": "",
-     *             "last_set": 0
-     *         }
+     *   "ok": true,
+     *   "group": {
+     *     "id": "G01234567",
+     *     "name": "secretplans-archived",
+     *     "is_group": true,
+     *     "created": 1440000000,
+     *     "creator": "U01234567",
+     *     "is_archived": false,
+     *     "is_mpim": false,
+     *     "is_open": true,
+     *     "last_read": "1440000000.000001",
+     *     "latest": {
+     *       "user": "U01234567",
+     *       "type": "message",
+     *       "subtype": "group_unarchive",
+     *       "text": "<@U01234567|user-name-sample> un-archived the private channel",
+     *       "ts": "1440000000.000001"
+     *     },
+     *     "unread_count": 0,
+     *     "unread_count_display": 0,
+     *     "members": [
+     *       "U01234567",
+     *       "U01234568"
+     *     ],
+     *     "topic": {
+     *       "value": "",
+     *       "creator": "",
+     *       "last_set": 0
+     *     },
+     *     "purpose": {
+     *       "value": "",
+     *       "creator": "",
+     *       "last_set": 0
      *     }
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Private group to invite user to.</dd>
-     *   <dt>GroupsComponent::OPTION_USER</dt>
-     *     <dd>User to invite.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Private group to invite user to.
+     *
+     * GroupsComponent::OPTION_USER
+     * :  User to invite.
      *
      * @param string $channel グループ名.
      * @param string $user ユーザ名.
@@ -538,26 +537,26 @@ class GroupsComponent extends BaseComponent
      * This method allows a user to remove another member from a team channel.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Channels->kick( 'C1234567890', 'U12345678' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Group to remove user from.</dd>
-     *   <dt>GroupsComponent::OPTION_USER</dt>
-     *     <dd>User to remove from group.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to remove user from.
+     *
+     * GroupsComponent::OPTION_USER
+     * :  User to remove from group.
      *
      * @param string $channel グループ名.
      * @param string $user ユーザ名.
@@ -584,24 +583,23 @@ class GroupsComponent extends BaseComponent
      * This method is used to leave a private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->leave( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Group to leave.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to leave.
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -627,49 +625,48 @@ class GroupsComponent extends BaseComponent
      * The list of (non-deactivated) members in each group is also returned.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->fetchList();
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "groups": [
-     *         {
-     *             "id": "G01234567",
-     *             "name": "secretplans",
-     *             "is_group": true,
-     *             "created": 1440000000,
-     *             "creator": "U01234567",
-     *             "is_archived": false,
-     *             "is_mpim": false,
-     *             "members": [
-     *                 "U01234567",
-     *                 "U01234568",
-     *             ],
-     *             "topic": {
-     *                 "value": "",
-     *                 "creator": "",
-     *                 "last_set": 0
-     *             },
-     *             "purpose": {
-     *                 "value": "",
-     *                 "creator": "",
-     *                 "last_set": 0
-     *             }
-     *         }
-     *     ]
+     *   "ok": true,
+     *   "groups": [
+     *     {
+     *       "id": "G01234567",
+     *       "name": "secretplans",
+     *       "is_group": true,
+     *       "created": 1440000000,
+     *       "creator": "U01234567",
+     *       "is_archived": false,
+     *       "is_mpim": false,
+     *       "members": [
+     *         "U01234567",
+     *         "U01234568",
+     *       ],
+     *       "topic": {
+     *         "value": "",
+     *         "creator": "",
+     *         "last_set": 0
+     *       },
+     *       "purpose": {
+     *         "value": "",
+     *         "creator": "",
+     *         "last_set": 0
+     *       }
+     *     }
+     *   ]
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:read`)</dd>
-     *   <dt>GroupsComponent::OPTION_EXCLUDE_ARCHIVED</dt>
-     *     <dd>Don't return archived groups.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:read`)
+     *
+     * GroupsComponent::OPTION_EXCLUDE_ARCHIVED
+     * :  Don't return archived groups.
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.
@@ -693,26 +690,26 @@ class GroupsComponent extends BaseComponent
      * This method moves the read cursor in a private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->mark( 'G01234567', '1440000000.000001' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Group to set reading cursor in.</dd>
-     *   <dt>GroupsComponent::OPTION_TS</dt>
-     *     <dd>Timestamp of the most recently seen message.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to set reading cursor in.
+     *
+     * GroupsComponent::OPTION_TS
+     * :  Timestamp of the most recently seen message.
      *
      * @param string $channel グループ名.
      * @param string $timestamp read cursor を移動したいメッセージの投稿日時(UNIX TIME).
@@ -739,24 +736,23 @@ class GroupsComponent extends BaseComponent
      * This method opens a private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->open( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Group to open.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to open.
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -781,32 +777,32 @@ class GroupsComponent extends BaseComponent
      * This method opens a private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->rename( 'G01234567', 'rename-private-group' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "channel": {
-     *         "id": "G01234567",
-     *         "name": "rename-private-group",
-     *         "is_group": true,
-     *         "created": 1440000000
-     *     }
+     *   "ok": true,
+     *   "channel": {
+     *     "id": "G01234567",
+     *     "name": "rename-private-group",
+     *     "is_group": true,
+     *     "created": 1440000000
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Group to rename.</dd>
-     *   <dt>GroupsComponent::OPTION_NAME</dt>
-     *     <dd>New name for group.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to rename.
+     *
+     * GroupsComponent::OPTION_NAME
+     * :  New name for group.
      *
      * @param string $channel グループ名.
      * @param string $rename 変更したいグループ名.
@@ -833,27 +829,27 @@ class GroupsComponent extends BaseComponent
      * This method opens a private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->setPurpose( 'G01234567', 'rename-private-group' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "purpose": "This is the new purpose!"
+     *   "ok": true,
+     *   "purpose": "This is the new purpose!"
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Private group to set the purpose of.</dd>
-     *   <dt>GroupsComponent::OPTION_PURPOSE</dt>
-     *     <dd>The new purpose.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Private group to set the purpose of.
+     *
+     * GroupsComponent::OPTION_PURPOSE
+     * :  The new purpose.
      *
      * @param string $channel グループ名.
      * @param string $purpose 目的.
@@ -881,27 +877,27 @@ class GroupsComponent extends BaseComponent
      * The calling user must be a member of the private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->setPurpose( 'G01234567', 'rename-private-group' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "topic": "This is the new topic!"
+     *   "ok": true,
+     *   "topic": "This is the new topic!"
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Private group to set the topic of.</dd>
-     *   <dt>GroupsComponent::OPTION_TOPIC</dt>
-     *     <dd>The new topic.</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Private group to set the topic of.
+     *
+     * GroupsComponent::OPTION_TOPIC
+     * :  The new topic.
      *
      * @param string $channel グループ名.
      * @param string $topic トピック.
@@ -928,24 +924,23 @@ class GroupsComponent extends BaseComponent
      * This method unarchives a private group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Groups->unarchive( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>GroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `groups:write`)</dd>
-     *   <dt>GroupsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Group to unarchive</dd>
-     * </dl>
+     * GroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `groups:write`)
+     *
+     * GroupsComponent::OPTION_CHANNEL
+     * :  Group to unarchive
      *
      * @param string $channel グループ名.
      * @param array $option オプション.

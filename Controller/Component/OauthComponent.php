@@ -63,29 +63,27 @@ class OAuthComponent extends BaseComponent
      * @see https://tools.ietf.org/html/rfc6749#section-2.3.1
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Oauth->access( '00000000000.00000000000', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', '00000000000.00000000000.ffffffffff' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "access_token": "xoxt-01234567890-1234567890123",
-     *     "scope": "read"
+     *   "access_token": "xoxt-01234567890-1234567890123",
+     *   "scope": "read"
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>OAuthComponent::OPTION_CLIENT_ID</dt>
-     *     <dd>Issued when you created your application.</dd>
-     *   <dt>OAuthComponent::OPTION_CLIENT_SECRET</dt>
-     *     <dd>Issued when you created your application.</dd>
-     *   <dt>OAuthComponent::OPTION_CODE</dt>
-     *     <dd>The `code` param returned via the OAuth callback.</dd>
-     *   <dt>OAuthComponent::OPTION_REDIRECT_URI</dt>
-     *     <dd>This must match the originally submitted URI (if one was sent).</dd>
-     * </dl>
+     * OAuthComponent::OPTION_CLIENT_ID
+     * :  Issued when you created your application.
+     * OAuthComponent::OPTION_CLIENT_SECRET
+     * :  Issued when you created your application.
+     * OAuthComponent::OPTION_CODE
+     * :  The `code` param returned via the OAuth callback.
+     * OAuthComponent::OPTION_REDIRECT_URI
+     * :  This must match the originally submitted URI (if one was sent).
      *
      * @param string $client_id クライアント ID.
      * @param string $client_secret クライアントシークレット.

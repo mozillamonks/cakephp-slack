@@ -74,57 +74,55 @@ class SearchComponent extends BaseComponent
      * This method allows to to search both messages and files in a single call.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Search->all( 'sample text' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "query": "sample text",
-     *     "messages": {
-     *         "total": 5,
-     *         "pagination": {omit...},
-     *         "paging": {omit...},
-     *         "matches": [
-     *             {omit...}
-     *         ]
-     *     },
-     *     "files": {
-     *         "total": 3,
-     *         "pagination": {omit...},
-     *         "paging": {omit...},
-     *         "matches": [
-     *             {omit...},
-     *             {omit...},
-     *             {omit...}
-     *         ]
-     *     },
-     *     "posts": {
-     *         "total": 0,
-     *         "matches": []
-     *     }
+     *   "ok": true,
+     *   "query": "sample text",
+     *   "messages": {
+     *     "total": 5,
+     *     "pagination": {omit...},
+     *     "paging": {omit...},
+     *     "matches": [
+     *       {omit...}
+     *     ]
+     *   },
+     *   "files": {
+     *     "total": 3,
+     *     "pagination": {omit...},
+     *     "paging": {omit...},
+     *     "matches": [
+     *       {omit...},
+     *       {omit...},
+     *       {omit...}
+     *     ]
+     *   },
+     *   "posts": {
+     *     "total": 0,
+     *     "matches": []
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>SearchComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `search:read`)</dd>
-     *   <dt>SearchComponent::OPTION_QUERY</dt>
-     *     <dd>Search query. May contains booleans, etc.</dd>
-     *   <dt>SearchComponent::OPTION_SORT</dt>
-     *     <dd>Return matches sorted by either `score` or `timestamp`.</dd>
-     *   <dt>SearchComponent::OPTION_SORT_DIR</dt>
-     *     <dd>Change sort direction to ascending (`asc`) or descending (`desc`).</dd>
-     *   <dt>SearchComponent::OPTION_HIGHLIGHT</dt>
-     *     <dd>Pass a value of `1` to enable query highlight markers (see below).</dd>
-     *   <dt>SearchComponent::OPTION_COUNT</dt>
-     *     <dd>Number of items to return per page.</dd>
-     *   <dt>SearchComponent::OPTION_PAGE</dt>
-     *     <dd>Page number of results to return.</dd>
-     * </dl>
+     * SearchComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `search:read`)
+     * SearchComponent::OPTION_QUERY
+     * :  Search query. May contains booleans, etc.
+     * SearchComponent::OPTION_SORT
+     * :  Return matches sorted by either `score` or `timestamp`.
+     * SearchComponent::OPTION_SORT_DIR
+     * :  Change sort direction to ascending (`asc`) or descending (`desc`).
+     * SearchComponent::OPTION_HIGHLIGHT
+     * :  Pass a value of `1` to enable query highlight markers (see below).
+     * SearchComponent::OPTION_COUNT
+     * :  Number of items to return per page.
+     * SearchComponent::OPTION_PAGE
+     * :  Page number of results to return.
      *
      * @param string $query 検索対象.
      * @param array $option オプション.
@@ -154,45 +152,43 @@ class SearchComponent extends BaseComponent
      * This method returns files matching a search query.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Search->fetchFiles( 'sample text' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "query": "sample text",
-     *     "files": {
-     *         "total": 3,
-     *         "pagination": {omit...},
-     *         "paging": {omit...},
-     *         "matches": [
-     *             {omit...},
-     *             {omit...},
-     *             {omit...}
-     *         ]
-     *     }
+     *   "ok": true,
+     *   "query": "sample text",
+     *   "files": {
+     *     "total": 3,
+     *     "pagination": {omit...},
+     *     "paging": {omit...},
+     *     "matches": [
+     *       {omit...},
+     *       {omit...},
+     *       {omit...}
+     *     ]
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>SearchComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `search:read`)</dd>
-     *   <dt>SearchComponent::OPTION_QUERY</dt>
-     *     <dd>Search query. May contains booleans, etc.</dd>
-     *   <dt>SearchComponent::OPTION_SORT</dt>
-     *     <dd>Return matches sorted by either `score` or `timestamp`.</dd>
-     *   <dt>SearchComponent::OPTION_SORT_DIR</dt>
-     *     <dd>Change sort direction to ascending (`asc`) or descending (`desc`).</dd>
-     *   <dt>SearchComponent::OPTION_HIGHLIGHT</dt>
-     *     <dd>Pass a value of `1` to enable query highlight markers.</dd>
-     *   <dt>SearchComponent::OPTION_COUNT</dt>
-     *     <dd>Number of items to return per page.</dd>
-     *   <dt>SearchComponent::OPTION_PAGE</dt>
-     *     <dd>Page number of results to return.</dd>
-     * </dl>
+     * SearchComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `search:read`)
+     * SearchComponent::OPTION_QUERY
+     * :  Search query. May contains booleans, etc.
+     * SearchComponent::OPTION_SORT
+     * :  Return matches sorted by either `score` or `timestamp`.
+     * SearchComponent::OPTION_SORT_DIR
+     * :  Change sort direction to ascending (`asc`) or descending (`desc`).
+     * SearchComponent::OPTION_HIGHLIGHT
+     * :  Pass a value of `1` to enable query highlight markers.
+     * SearchComponent::OPTION_COUNT
+     * :  Number of items to return per page.
+     * SearchComponent::OPTION_PAGE
+     * :  Page number of results to return.
      *
      * @param string $query 検索対象.
      * @param array $option オプション.
@@ -222,43 +218,41 @@ class SearchComponent extends BaseComponent
      * This method returns messages matching a search query.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Search->fetchMessages( 'sample text' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "query": "sample text",
-     *     "messages": {
-     *         "total": 1,
-     *         "pagination": {omit...},
-     *         "paging": {omit...},
-     *         "matches": [
-     *             {omit...}
-     *         ]
-     *     }
+     *   "ok": true,
+     *   "query": "sample text",
+     *   "messages": {
+     *     "total": 1,
+     *     "pagination": {omit...},
+     *     "paging": {omit...},
+     *     "matches": [
+     *       {omit...}
+     *     ]
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>SearchComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `search:read`)</dd>
-     *   <dt>SearchComponent::OPTION_QUERY</dt>
-     *     <dd>Search query. May contains booleans, etc.</dd>
-     *   <dt>SearchComponent::OPTION_SORT</dt>
-     *     <dd>Return matches sorted by either `score` or `timestamp`.</dd>
-     *   <dt>SearchComponent::OPTION_SORT_DIR</dt>
-     *     <dd>Change sort direction to ascending (`asc`) or descending (`desc`).</dd>
-     *   <dt>SearchComponent::OPTION_HIGHLIGHT</dt>
-     *     <dd>Pass a value of `1` to enable query highlight markers.</dd>
-     *   <dt>SearchComponent::OPTION_COUNT</dt>
-     *     <dd>Number of items to return per page.</dd>
-     *   <dt>SearchComponent::OPTION_PAGE</dt>
-     *     <dd>Page number of results to return.</dd>
-     * </dl>
+     * SearchComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `search:read`)
+     * SearchComponent::OPTION_QUERY
+     * :  Search query. May contains booleans, etc.
+     * SearchComponent::OPTION_SORT
+     * :  Return matches sorted by either `score` or `timestamp`.
+     * SearchComponent::OPTION_SORT_DIR
+     * :  Change sort direction to ascending (`asc`) or descending (`desc`).
+     * SearchComponent::OPTION_HIGHLIGHT
+     * :  Pass a value of `1` to enable query highlight markers.
+     * SearchComponent::OPTION_COUNT
+     * :  Number of items to return per page.
+     * SearchComponent::OPTION_PAGE
+     * :  Page number of results to return.
      *
      * @param string $query 検索対象.
      * @param array $option オプション.

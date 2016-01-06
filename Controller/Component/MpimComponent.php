@@ -62,24 +62,22 @@ class MpimComponent extends BaseComponent
      * This method closes a multiparty direct message channel.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Mpim->close( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>MpimComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `mpim:write`)</dd>
-     *   <dt>MpimComponent::OPTION_CHANNEL</dt>
-     *     <dd>MPIM to close.</dd>
-     * </dl>
+     * MpimComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `mpim:write`)
+     * MpimComponent::OPTION_CHANNEL
+     * :  MPIM to close.
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -105,43 +103,41 @@ class MpimComponent extends BaseComponent
      * To read the entire history for a multiparty direct message, call the method with no `latest` or `oldest` arguments, and then continue paging using the instructions below.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Mpim->fetchHistory( 'G01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "messages": [
-     *         {
-     *             "type": "message",
-     *             "user": "U01234567",
-     *             "text": "Hello!",
-     *             "ts": "1440000000.000001"
-     *         }
-     *     ],
-     *     "has_more": false
+     *   "ok": true,
+     *   "messages": [
+     *     {
+     *       "type": "message",
+     *       "user": "U01234567",
+     *       "text": "Hello!",
+     *       "ts": "1440000000.000001"
+     *     }
+     *   ],
+     *   "has_more": false
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>MpimComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `mpim:history`)</dd>
-     *   <dt>MpimComponent::OPTION_CHANNEL</dt>
-     *     <dd>Multiparty direct message to fetch history for.</dd>
-     *   <dt>MpimComponent::OPTION_LATEST</dt>
-     *     <dd>End of time range of messages to include in results.</dd>
-     *   <dt>MpimComponent::OPTION_OLDEST</dt>
-     *     <dd>Start of time range of messages to include in results.</dd>
-     *   <dt>MpimComponent::OPTION_INCLUSIVE</dt>
-     *     <dd>Include messages with latest or oldest timestamp in results.</dd>
-     *   <dt>MpimComponent::OPTION_COUNT</dt>
-     *     <dd>Number of messages to return, between 1 and 1000.</dd>
-     *   <dt>MpimComponent::OPTION_UNREADS</dt>
-     *     <dd>Include `unread_count_display` in the output?</dd>
-     * </dl>
+     * MpimComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `mpim:history`)
+     * MpimComponent::OPTION_CHANNEL
+     * :  Multiparty direct message to fetch history for.
+     * MpimComponent::OPTION_LATEST
+     * :  End of time range of messages to include in results.
+     * MpimComponent::OPTION_OLDEST
+     * :  Start of time range of messages to include in results.
+     * MpimComponent::OPTION_INCLUSIVE
+     * :  Include messages with latest or oldest timestamp in results.
+     * MpimComponent::OPTION_COUNT
+     * :  Number of messages to return, between 1 and 1000.
+     * MpimComponent::OPTION_UNREADS
+     * :  Include `unread_count_display` in the output?
      *
      * @param string $channel グループ名.
      * @param array $option オプション.
@@ -171,49 +167,47 @@ class MpimComponent extends BaseComponent
      * This method returns a list of all multiparty direct message channels that the user has.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Mpim->fetchList();
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "groups": [
-     *         {
-     *             "id": "G01234567",
-     *             "name": "mpdm-user--user_a--user_b--user_c-1",
-     *             "is_group": true,
-     *             "created": 1440000000,
-     *             "creator": "U01234567",
-     *             "is_archived": false,
-     *             "is_mpim": true,
-     *             "members": [
-     *                 "U01234567",
-     *                 "U01234568",
-     *                 "U01234569",
-     *                 "U01234560"
-     *             ],
-     *             "topic": {
-     *                 "value": "Group messaging",
-     *                 "creator": "U01234567",
-     *                 "last_set": 1440000000
-     *             },
-     *             "purpose": {
-     *                 "value": "Group messaging with: @user @user_a @user_b @user_c",
-     *                 "creator": "U01234567",
-     *                 "last_set": 1440000000
-     *             }
-     *         }
-     *     ]
+     *   "ok": true,
+     *   "groups": [
+     *     {
+     *       "id": "G01234567",
+     *       "name": "mpdm-user--user_a--user_b--user_c-1",
+     *       "is_group": true,
+     *       "created": 1440000000,
+     *       "creator": "U01234567",
+     *       "is_archived": false,
+     *       "is_mpim": true,
+     *       "members": [
+     *         "U01234567",
+     *         "U01234568",
+     *         "U01234569",
+     *         "U01234560"
+     *       ],
+     *       "topic": {
+     *         "value": "Group messaging",
+     *         "creator": "U01234567",
+     *         "last_set": 1440000000
+     *       },
+     *       "purpose": {
+     *         "value": "Group messaging with: @user @user_a @user_b @user_c",
+     *         "creator": "U01234567",
+     *         "last_set": 1440000000
+     *       }
+     *     }
+     *   ]
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>MpimComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `mpim:read`)</dd>
-     * </dl>
+     * MpimComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `mpim:read`)
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.
@@ -236,26 +230,24 @@ class MpimComponent extends BaseComponent
      * This method moves the read cursor in a multiparty direct message channel.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Mpim->mark( 'G01234567', '1440000000.000001' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>MpimComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `mpim:write`)</dd>
-     *   <dt>MpimComponent::OPTION_CHANNEL</dt>
-     *     <dd>Multiparty direct message channel to set reading cursor in.</dd>
-     *   <dt>MpimComponent::OPTION_TS</dt>
-     *     <dd>Timestamp of the most recently seen message.</dd>
-     * </dl>
+     * MpimComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `mpim:write`)
+     * MpimComponent::OPTION_CHANNEL
+     * :  Multiparty direct message channel to set reading cursor in.
+     * MpimComponent::OPTION_TS
+     * :  Timestamp of the most recently seen message.
      *
      * @param string $channel グループ名.
      * @param string $timestamp read cursor を移動したいメッセージの投稿日時(UNIX TIME).
@@ -285,54 +277,52 @@ class MpimComponent extends BaseComponent
      * Subsequent calls to `mpim.open` with the same set of users will return the already existing MPIM conversation.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Mpim->open( [U01234568,U01234569,U01234560] );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "group": {
-     *         "id": "G01234567",
-     *         "name": "mpdm-user--user_a--user_b--user_c-1",
-     *         "is_group": true,
-     *         "created": 1440000000,
-     *         "creator": "U01234567",
-     *         "is_archived": false,
-     *         "is_mpim": true,
-     *         "is_open": false,
-     *         "last_read": "0000000000.000000",
-     *         "latest": null,
-     *         "unread_count": 0,
-     *         "unread_count_display": 0,
-     *         "members": [
-     *             "U01234567",
-     *             "U01234568",
-     *             "U01234569",
-     *             "U01234560"
-     *         ],
-     *         "topic": {
-     *             "value": "Group messaging",
-     *             "creator": "U01234567",
-     *             "last_set": 1440000000
-     *         },
-     *         "purpose": {
-     *             "value": "Group messaging with: @user @user_a @user_b @user_c",
-     *             "creator": "U01234567",
-     *             "last_set": 1440000000
-     *         }
+     *   "ok": true,
+     *   "group": {
+     *     "id": "G01234567",
+     *     "name": "mpdm-user--user_a--user_b--user_c-1",
+     *     "is_group": true,
+     *     "created": 1440000000,
+     *     "creator": "U01234567",
+     *     "is_archived": false,
+     *     "is_mpim": true,
+     *     "is_open": false,
+     *     "last_read": "0000000000.000000",
+     *     "latest": null,
+     *     "unread_count": 0,
+     *     "unread_count_display": 0,
+     *     "members": [
+     *       "U01234567",
+     *       "U01234568",
+     *       "U01234569",
+     *       "U01234560"
+     *     ],
+     *     "topic": {
+     *       "value": "Group messaging",
+     *       "creator": "U01234567",
+     *       "last_set": 1440000000
+     *     },
+     *     "purpose": {
+     *       "value": "Group messaging with: @user @user_a @user_b @user_c",
+     *       "creator": "U01234567",
+     *       "last_set": 1440000000
      *     }
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>MpimComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `mpim:write`)</dd>
-     *   <dt>MpimComponent::OPTION_USERS</dt>
-     *     <dd>Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned.</dd>
-     * </dl>
+     * MpimComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `mpim:write`)
+     * MpimComponent::OPTION_USERS
+     * :  Comma separated lists of users. The ordering of the users is preserved whenever a MPIM group is returned.
      *
      * @param array $users ユーザ ID の配列.
      * @param array $option オプション.

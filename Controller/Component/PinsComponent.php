@@ -61,32 +61,30 @@ class PinsComponent extends BaseComponent
      * The `channel` argument is required and one of `file`, `file_comment`, or `timestamp` must also be specified.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Pins->add('C01234567', [
      *     PinsComponent::OPTION_FILE_TIMESTAMP => '1440000000.000001'
      * ]);
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>PinsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `pins:write`)</dd>
-     *   <dt>PinsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Channel to pin the item in.</dd>
-     *   <dt>PinsComponent::OPTION_FILE</dt>
-     *     <dd>File to pin.</dd>
-     *   <dt>PinsComponent::OPTION_FILE_COMMENT</dt>
-     *     <dd>File comment to pin.</dd>
-     *   <dt>PinsComponent::OPTION_TIMESTAMP</dt>
-     *     <dd>Timestamp of the message to pin.</dd>
-     * </dl>
+     * PinsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `pins:write`)
+     * PinsComponent::OPTION_CHANNEL
+     * :  Channel to pin the item in.
+     * PinsComponent::OPTION_FILE
+     * :  File to pin.
+     * PinsComponent::OPTION_FILE_COMMENT
+     * :  File comment to pin.
+     * PinsComponent::OPTION_TIMESTAMP
+     * :  Timestamp of the message to pin.
      *
      * @param string $channel チャンネル名.
      * @param array $option オプション.
@@ -114,44 +112,42 @@ class PinsComponent extends BaseComponent
      * This method lists the items pinned to a channel.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Pins->fetchList( 'C01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "items": [
-     *         {
-     *             "type": "message",
-     *             "channel": "C01234567",
-     *             "message": {
-     *                 "user": "U01234567",
-     *                 "members": [
-     *                     "U01234567"
-     *                 ],
-     *                 "type": "message",
-     *                 "subtype": "channel_join",
-     *                 "text": "<@U01234567|user-name-sample> has joined the channel",
-     *                 "ts": "1440000000.000001"
-     *                 "permalink": "https://{your_team}.slack.com/archives/{channel_name}/p1440000000000001",
-     *                 "pinned_to": [
-     *                     "C01234567"
-     *                 ]
-     *             }
-     *         }
-     *     ]
+     *   "ok": true,
+     *   "items": [
+     *     {
+     *       "type": "message",
+     *       "channel": "C01234567",
+     *       "message": {
+     *         "user": "U01234567",
+     *         "members": [
+     *           "U01234567"
+     *         ],
+     *         "type": "message",
+     *         "subtype": "channel_join",
+     *         "text": "<@U01234567|user-name-sample> has joined the channel",
+     *         "ts": "1440000000.000001"
+     *         "permalink": "https://{your_team}.slack.com/archives/{channel_name}/p1440000000000001",
+     *         "pinned_to": [
+     *           "C01234567"
+     *         ]
+     *       }
+     *     }
+     *   ]
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>PinsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `pins:read`)</dd>
-     *   <dt>PinsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Channel to get pinned items for.</dd>
-     * </dl>
+     * PinsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `pins:read`)
+     * PinsComponent::OPTION_CHANNEL
+     * :  Channel to get pinned items for.
      *
      * @param string $channel チャンネル名.
      * @param array $option オプション.
@@ -177,32 +173,30 @@ class PinsComponent extends BaseComponent
      * The channel argument is required and one of file, file_comment, or timestamp must also be specified.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Pins->remove('C01234567', [
      *     PinsComponent::OPTION_FILE_TIMESTAMP => '1440000000.000001'
      * ]);
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>PinsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `pins:write`)</dd>
-     *   <dt>PinsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Channel where the item is pinned to.</dd>
-     *   <dt>PinsComponent::OPTION_FILE</dt>
-     *     <dd>File to un-pin.</dd>
-     *   <dt>PinsComponent::OPTION_FILE_COMMENT</dt>
-     *     <dd>File comment to un-pin.</dd>
-     *   <dt>PinsComponent::OPTION_TIMESTAMP</dt>
-     *     <dd>Timestamp of the message to un-pin.</dd>
-     * </dl>
+     * PinsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `pins:write`)
+     * PinsComponent::OPTION_CHANNEL
+     * :  Channel where the item is pinned to.
+     * PinsComponent::OPTION_FILE
+     * :  File to un-pin.
+     * PinsComponent::OPTION_FILE_COMMENT
+     * :  File comment to un-pin.
+     * PinsComponent::OPTION_TIMESTAMP
+     * :  Timestamp of the message to un-pin.
      *
      * @param string $channel チャンネル名.
      * @param array $option オプション.

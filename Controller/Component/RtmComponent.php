@@ -52,54 +52,52 @@ class RtmComponent extends BaseComponent
      * Refer to the RTM API documentation for full details on how to use the RTM API.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Rtm->start();
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "self": {omit...},
-     *     "team": {omit...},
-     *     "latest_event_ts": "1440000000.000001",
-     *     "channels": [
-     *         {omit...}
-     *     ],
-     *     "groups": [
-     *         {omit...}
-     *     ],
-     *     "ims": [
-     *         {omit...}
-     *     ],
-     *     "cache_ts": 1440000000,
-     *     "subteams": {
-     *         "self": [],
-     *         "all": []
-     *     },
-     *     "users": [
-     *         {omit...}
-     *     ],
-     *     "cache_version": "v11-mouse",
-     *     "cache_ts_version": "v1-cat",
-     *     "bots": [
-     *         {omit...}
-     *     ],
-     *     "url": "wss://msxxx.slack-msgs.com/websocket/{base64 encoded binary data.}"
+     *   "ok": true,
+     *   "self": {omit...},
+     *   "team": {omit...},
+     *   "latest_event_ts": "1440000000.000001",
+     *   "channels": [
+     *     {omit...}
+     *   ],
+     *   "groups": [
+     *     {omit...}
+     *   ],
+     *   "ims": [
+     *     {omit...}
+     *   ],
+     *   "cache_ts": 1440000000,
+     *   "subteams": {
+     *     "self": [],
+     *     "all": []
+     *   },
+     *   "users": [
+     *     {omit...}
+     *   ],
+     *   "cache_version": "v11-mouse",
+     *   "cache_ts_version": "v1-cat",
+     *   "bots": [
+     *     {omit...}
+     *   ],
+     *   "url": "wss://msxxx.slack-msgs.com/websocket/{base64 encoded binary data.}"
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>RtmComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `client`)</dd>
-     *   <dt>RtmComponent::OPTION_SIMPLE_LATEST</dt>
-     *     <dd>Return timestamp only for latest message object of each channel (improves performance).</dd>
-     *   <dt>RtmComponent::OPTION_NO_UNREADS</dt>
-     *     <dd>Skip unread counts for each channel (improves performance).</dd>
-     *   <dt>RtmComponent::OPTION_MPIM_AWARE</dt>
-     *     <dd>Returns MPIMs to the client in the API response.</dd>
-     * </dl>
+     * RtmComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `client`)
+     * RtmComponent::OPTION_SIMPLE_LATEST
+     * :  Return timestamp only for latest message object of each channel (improves performance).
+     * RtmComponent::OPTION_NO_UNREADS
+     * :  Skip unread counts for each channel (improves performance).
+     * RtmComponent::OPTION_MPIM_AWARE
+     * :  Returns MPIMs to the client in the API response.
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.

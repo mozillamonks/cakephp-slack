@@ -38,7 +38,7 @@ class ApiComponent extends BaseComponent
      * This method helps you test your calling code.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Api->test([
      *     ApiComponent::OPTION_ERROR => 'my_error',
      *     'foo' => 'bar',
@@ -46,22 +46,20 @@ class ApiComponent extends BaseComponent
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": false,
+     *   "ok": false,
+     *   "error": "my_error",
+     *   "args": {
      *     "error": "my_error",
-     *     "args": {
-     *         "error": "my_error",
-     *         "foo": "bar"
-     *     }
+     *     "foo": "bar"
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *    <dt>ApiComponent::OPTION_ERROR</dt>
-     *    <dd>Error response to return.</dd>
-     * </dl>
+     * ApiComponent::OPTION_ERROR
+     * :  Error response to return.
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.

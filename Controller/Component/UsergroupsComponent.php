@@ -86,54 +86,52 @@ class UsergroupsComponent extends BaseComponent
      * This method is used to create a user group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Usergroups->create( 'Marketing Team' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "usergroup": {
-     *         "id": "S01234567",
-     *         "team_id": "T01234567",
-     *         "is_usergroup": true,
-     *         "is_subteam": true,
-     *         "name": "Marketing Team",
-     *         "description": "",
-     *         "handle": "",
-     *         "is_external": false,
-     *         "date_create": 1440000001,
-     *         "date_update": 1440000001,
-     *         "date_delete": 0,
-     *         "auto_type": null,
-     *         "created_by": "U01234567",
-     *         "updated_by": "U01234567",
-     *         "deleted_by": null,
-     *         "prefs": {
-     *             "channels": [],
-     *             "groups": []
-     *         },
-     *         "user_count": "0"
-     *     }
+     *   "ok": true,
+     *   "usergroup": {
+     *     "id": "S01234567",
+     *     "team_id": "T01234567",
+     *     "is_usergroup": true,
+     *     "is_subteam": true,
+     *     "name": "Marketing Team",
+     *     "description": "",
+     *     "handle": "",
+     *     "is_external": false,
+     *     "date_create": 1440000001,
+     *     "date_update": 1440000001,
+     *     "date_delete": 0,
+     *     "auto_type": null,
+     *     "created_by": "U01234567",
+     *     "updated_by": "U01234567",
+     *     "deleted_by": null,
+     *     "prefs": {
+     *       "channels": [],
+     *       "groups": []
+     *     },
+     *     "user_count": "0"
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>UsergroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `usergroups:write`)</dd>
-     *   <dt>UsergroupsComponent::OPTION_NAME</dt>
-     *     <dd>A name for the user group. Must be unique among user groups.</dd>
-     *   <dt>UsergroupsComponent::OPTION_HANDLE</dt>
-     *     <dd>A mention handle. Must be unique among channels, users and user groups.</dd>
-     *   <dt>UsergroupsComponent::OPTION_DESCRIPTION</dt>
-     *     <dd>A short description of the user group.</dd>
-     *   <dt>UsergroupsComponent::OPTION_CHANNELS</dt>
-     *     <dd>A comma separated string of encoded channel IDs for which the user group uses as a default.</dd>
-     *   <dt>UsergroupsComponent::OPTION_INCLUDE_COUNT</dt>
-     *     <dd>Include the number of users in each user group.</dd>
-     * </dl>
+     * UsergroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `usergroups:write`)
+     * UsergroupsComponent::OPTION_NAME
+     * :  A name for the user group. Must be unique among user groups.
+     * UsergroupsComponent::OPTION_HANDLE
+     * :  A mention handle. Must be unique among channels, users and user groups.
+     * UsergroupsComponent::OPTION_DESCRIPTION
+     * :  A short description of the user group.
+     * UsergroupsComponent::OPTION_CHANNELS
+     * :  A comma separated string of encoded channel IDs for which the user group uses as a default.
+     * UsergroupsComponent::OPTION_INCLUDE_COUNT
+     * :  Include the number of users in each user group.
      *
      * @param string $user ユーザ ID.
      * @param array $option オプション.
@@ -163,48 +161,46 @@ class UsergroupsComponent extends BaseComponent
      * This method disables an existing user group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Usergroups->disable( 'S01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "usergroup": {
-     *         "id": "S01234567",
-     *         "team_id": "T01234567",
-     *         "is_usergroup": true,
-     *         "is_subteam": true,
-     *         "name": "Marketing Team",
-     *         "description": "",
-     *         "handle": "marketing",
-     *         "is_external": false,
-     *         "date_create": 1440000000,
-     *         "date_update": 1440000000,
-     *         "date_delete": 1440000000,
-     *         "auto_type": null,
-     *         "created_by": "U01234567",
-     *         "updated_by": "U01234567",
-     *         "deleted_by": "U01234567",
-     *         "prefs": {
-     *             "channels": [],
-     *             "groups": []
-     *         },
-     *         "user_count": "0"
-     *     }
+     *   "ok": true,
+     *   "usergroup": {
+     *     "id": "S01234567",
+     *     "team_id": "T01234567",
+     *     "is_usergroup": true,
+     *     "is_subteam": true,
+     *     "name": "Marketing Team",
+     *     "description": "",
+     *     "handle": "marketing",
+     *     "is_external": false,
+     *     "date_create": 1440000000,
+     *     "date_update": 1440000000,
+     *     "date_delete": 1440000000,
+     *     "auto_type": null,
+     *     "created_by": "U01234567",
+     *     "updated_by": "U01234567",
+     *     "deleted_by": "U01234567",
+     *     "prefs": {
+     *       "channels": [],
+     *       "groups": []
+     *     },
+     *     "user_count": "0"
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>UsergroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `usergroups:write`)</dd>
-     *   <dt>UsergroupsComponent::OPTION_USERGROUP</dt>
-     *     <dd>The encoded ID of the user group to disable.</dd>
-     *   <dt>UsergroupsComponent::OPTION_INCLUDE_COUNT</dt>
-     *     <dd>Include the number of users in the user group.</dd>
-     * </dl>
+     * UsergroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `usergroups:write`)
+     * UsergroupsComponent::OPTION_USERGROUP
+     * :  The encoded ID of the user group to disable.
+     * UsergroupsComponent::OPTION_INCLUDE_COUNT
+     * :  Include the number of users in the user group.
      *
      * @param string $usergroup ユーザグループ ID.
      * @param array $option オプション.
@@ -230,48 +226,46 @@ class UsergroupsComponent extends BaseComponent
      * This method enables a user group which was previously disabled.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Usergroups->enable( 'S01234567' );
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "usergroup": {
-     *         "id": "S01234567",
-     *         "team_id": "T01234567",
-     *         "is_usergroup": true,
-     *         "is_subteam": true,
-     *         "name": "Marketing Team",
-     *         "description": "",
-     *         "handle": "marketing",
-     *         "is_external": false,
-     *         "date_create": 1440000000,
-     *         "date_update": 1440000000,
-     *         "date_delete": 0,
-     *         "auto_type": null,
-     *         "created_by": "U01234567",
-     *         "updated_by": "U01234567",
-     *         "deleted_by": null,
-     *         "prefs": {
-     *             "channels": [],
-     *             "groups": []
-     *         },
-     *         "user_count": "0"
-     *     }
+     *   "ok": true,
+     *   "usergroup": {
+     *     "id": "S01234567",
+     *     "team_id": "T01234567",
+     *     "is_usergroup": true,
+     *     "is_subteam": true,
+     *     "name": "Marketing Team",
+     *     "description": "",
+     *     "handle": "marketing",
+     *     "is_external": false,
+     *     "date_create": 1440000000,
+     *     "date_update": 1440000000,
+     *     "date_delete": 0,
+     *     "auto_type": null,
+     *     "created_by": "U01234567",
+     *     "updated_by": "U01234567",
+     *     "deleted_by": null,
+     *     "prefs": {
+     *       "channels": [],
+     *       "groups": []
+     *     },
+     *     "user_count": "0"
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>UsergroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `usergroups:write`)</dd>
-     *   <dt>UsergroupsComponent::OPTION_USERGROUP</dt>
-     *     <dd>The encoded ID of the user group to enable.</dd>
-     *   <dt>UsergroupsComponent::OPTION_INCLUDE_COUNT</dt>
-     *     <dd>Include the number of users in the user group.</dd>
-     * </dl>
+     * UsergroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `usergroups:write`)
+     * UsergroupsComponent::OPTION_USERGROUP
+     * :  The encoded ID of the user group to enable.
+     * UsergroupsComponent::OPTION_INCLUDE_COUNT
+     * :  Include the number of users in the user group.
      *
      * @param string $usergroup ユーザグループ ID.
      * @param array $option オプション.
@@ -298,52 +292,50 @@ class UsergroupsComponent extends BaseComponent
      * This can optionally include disabled user groups.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Usergroups->fetchList();
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "usergroups": [
-     *         {
-     *             "id": "S01234567",
-     *             "team_id": "T01234567",
-     *             "is_usergroup": true,
-     *             "is_subteam": true,
-     *             "name": "Marketing Team",
-     *             "description": "",
-     *             "handle": "marketing",
-     *             "is_external": false,
-     *             "date_create": 1440000000,
-     *             "date_update": 1440000000,
-     *             "date_delete": 0,
-     *             "auto_type": null,
-     *             "created_by": "U01234567",
-     *             "updated_by": "U01234567",
-     *             "deleted_by": null,
-     *             "prefs": {
-     *                 "channels": [],
-     *                 "groups": []
-     *             },
-     *             "user_count": "0"
-     *         }
-     *     ]
+     *   "ok": true,
+     *   "usergroups": [
+     *     {
+     *       "id": "S01234567",
+     *       "team_id": "T01234567",
+     *       "is_usergroup": true,
+     *       "is_subteam": true,
+     *       "name": "Marketing Team",
+     *       "description": "",
+     *       "handle": "marketing",
+     *       "is_external": false,
+     *       "date_create": 1440000000,
+     *       "date_update": 1440000000,
+     *       "date_delete": 0,
+     *       "auto_type": null,
+     *       "created_by": "U01234567",
+     *       "updated_by": "U01234567",
+     *       "deleted_by": null,
+     *       "prefs": {
+     *         "channels": [],
+     *         "groups": []
+     *       },
+     *       "user_count": "0"
+     *     }
+     *   ]
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>UsergroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `usergroups:read`)</dd>
-     *   <dt>UsergroupsComponent::OPTION_INCLUDE_DISABLED</dt>
-     *     <dd>Include disabled user groups.</dd>
-     *   <dt>UsergroupsComponent::OPTION_INCLUDE_COUNT</dt>
-     *     <dd>Include the number of users in each user group.</dd>
-     *   <dt>UsergroupsComponent::OPTION_INCLUDE_USERS</dt>
-     *     <dd>Include the list of users for each user group./dd>
-     * </dl>
+     * UsergroupsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `usergroups:read`)
+     * UsergroupsComponent::OPTION_INCLUDE_DISABLED
+     * :  Include disabled user groups.
+     * UsergroupsComponent::OPTION_INCLUDE_COUNT
+     * :  Include the number of users in each user group.
+     * UsergroupsComponent::OPTION_INCLUDE_USERS
+     * :  Include the list of users for each user group./dd>
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.
@@ -369,7 +361,7 @@ class UsergroupsComponent extends BaseComponent
      * This method updates the properties of an existing user group.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Usergroups->update( 'S01234567', [
      *     UsergroupComponent::OPTION_CHANNELS => ['C01234567'],
      *     UsergroupComponent::OPTION_DESCRIPTION => 'test purpose!',
@@ -378,53 +370,51 @@ class UsergroupsComponent extends BaseComponent
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "usergroup": {
-     *         "id": "S01234567",
-     *         "team_id": "T01234567",
-     *         "is_usergroup": true,
-     *         "is_subteam": true,
-     *         "name": "Marketing Team",
-     *         "description": "test purpose!",
-     *         "handle": "marketing",
-     *         "is_external": false,
-     *         "date_create": 1440000000,
-     *         "date_update": 1440000000,
-     *         "date_delete": 0,
-     *         "auto_type": null,
-     *         "created_by": "U01234567",
-     *         "updated_by": "U01234567",
-     *         "deleted_by": null,
-     *         "prefs": {
-     *             "channels": [
-     *                 "C01234567"
-     *             ],
-     *             "groups": []
-     *         },
-     *         "user_count": "0"
-     *     }
+     *   "ok": true,
+     *   "usergroup": {
+     *     "id": "S01234567",
+     *     "team_id": "T01234567",
+     *     "is_usergroup": true,
+     *     "is_subteam": true,
+     *     "name": "Marketing Team",
+     *     "description": "test purpose!",
+     *     "handle": "marketing",
+     *     "is_external": false,
+     *     "date_create": 1440000000,
+     *     "date_update": 1440000000,
+     *     "date_delete": 0,
+     *     "auto_type": null,
+     *     "created_by": "U01234567",
+     *     "updated_by": "U01234567",
+     *     "deleted_by": null,
+     *     "prefs": {
+     *       "channels": [
+     *         "C01234567"
+     *       ],
+     *       "groups": []
+     *     },
+     *     "user_count": "0"
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>UsergroupsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `usergroups:write`)</dd>
-     *   <dt>UsergroupsComponent::OPTION_USERGROUP</dt>
-     *     <dd>The encoded ID of the user group to update.</dd>
-     *   <dt>UsergroupsComponent::OPTION_NAME</dt>
-     *     <dd>A name for the user group. Must be unique among user groups.</dd>
-     *   <dt>UsergroupsComponent::OPTION_HANDLE</dt>
-     *     <dd>A mention handle. Must be unique among channels, users and user groups.</dd>
-     *   <dt>UsergroupsComponent::OPTION_DESCRIPTION</dt>
-     *     <dd>A short description of the user group.</dd>
-     *   <dt>UsergroupsComponent::OPTION_CHANNELS</dt>
-     *     <dd>A comma separated string of encoded channel IDs for which the user group uses as a default.</dd>
-     *   <dt>UsergroupsComponent::OPTION_INCLUDE_COUNT</dt>
-     *     <dd>Include the number of users in the user group.</dd>
-     * </dl>
+     * UsergroupsComponent::OPTION_TOKEN
+     *     <dd>Authentication token (Requires scope: `usergroups:write`)
+     * UsergroupsComponent::OPTION_USERGROUP
+     * :  The encoded ID of the user group to update.
+     * UsergroupsComponent::OPTION_NAME
+     * :  A name for the user group. Must be unique among user groups.
+     * UsergroupsComponent::OPTION_HANDLE
+     * :  A mention handle. Must be unique among channels, users and user groups.
+     * UsergroupsComponent::OPTION_DESCRIPTION
+     * :  A short description of the user group.
+     * UsergroupsComponent::OPTION_CHANNELS
+     * :  A comma separated string of encoded channel IDs for which the user group uses as a default.
+     * UsergroupsComponent::OPTION_INCLUDE_COUNT
+     * :  Include the number of users in the user group.
      *
      * @param string $usergroup ユーザグループ ID.
      * @param array $option オプション.

@@ -91,7 +91,7 @@ class ReactionsComponent extends BaseComponent
      * One of file, file_comment, or the combination of channel and timestamp must be specified.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Reactions->add('full_moon_with_face',[
      *     ReactionsComponent::OPTION_CHANNEL => 'C01234567',
      *     ReactionsComponent::OPTION_TIMESTAMP => '1440000000.000001'
@@ -99,27 +99,25 @@ class ReactionsComponent extends BaseComponent
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>PinsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `reactions:write`)</dd>
-     *   <dt>PinsComponent::OPTION_NAME</dt>
-     *     <dd>Reaction (emoji) name.</dd>
-     *   <dt>PinsComponent::OPTION_FILE</dt>
-     *     <dd>File to add reaction to.</dd>
-     *   <dt>PinsComponent::OPTION_FILE_COMMENT</dt>
-     *     <dd>File comment to add reaction to.</dd>
-     *   <dt>PinsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Channel where the message to add reaction to was posted.</dd>
-     *   <dt>PinsComponent::OPTION_TIMESTAMP</dt>
-     *     <dd>Timestamp of the message to add reaction to.</dd>
-     * </dl>
+     * ReactionsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `reactions:write`)
+     * ReactionsComponent::OPTION_NAME
+     * :  Reaction (emoji) name.
+     * ReactionsComponent::OPTION_FILE
+     * :  File to add reaction to.
+     * ReactionsComponent::OPTION_FILE_COMMENT
+     * :  File comment to add reaction to.
+     * ReactionsComponent::OPTION_CHANNEL
+     * :  Channel where the message to add reaction to was posted.
+     * ReactionsComponent::OPTION_TIMESTAMP
+     * :  Timestamp of the message to add reaction to.
      *
      * @param string $name 絵文字名.
      * @param array $option オプション.
@@ -148,7 +146,7 @@ class ReactionsComponent extends BaseComponent
      * This method returns a list of all reactions for a single item (file, file comment, channel message, group message, or direct message).
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Reactions->add('full_moon_with_face',[
      *     ReactionsComponent::OPTION_CHANNEL => 'C01234567',
      *     ReactionsComponent::OPTION_TIMESTAMP => '1440000000.000001'
@@ -156,49 +154,47 @@ class ReactionsComponent extends BaseComponent
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
+     *   "ok": true,
+     *   "type": "message",
+     *   "channel": "C01234567",
+     *   "message": {
+     *     "user": "U01234567",
+     *     "members": [
+     *       "U01234567"
+     *     ],
      *     "type": "message",
-     *     "channel": "C01234567",
-     *     "message": {
-     *         "user": "U01234567",
-     *         "members": [
-     *             "U01234567"
+     *     "subtype": "channel_archive",
+     *     "text": "<@U01234567|crepuscular> archived the channel (w/ 1 member)",
+     *     "ts": "1440000000.000001",
+     *     "permalink": "https://{your_team}.slack.com/archives/{channel_name}/p1440000000000001",
+     *     "reactions": [
+     *       {
+     *         "name": "full_moon_with_face",
+     *         "users": [
+     *           "U01234567"
      *         ],
-     *         "type": "message",
-     *         "subtype": "channel_archive",
-     *         "text": "<@U01234567|crepuscular> archived the channel (w/ 1 member)",
-     *         "ts": "1440000000.000001",
-     *         "permalink": "https://{your_team}.slack.com/archives/{channel_name}/p1440000000000001",
-     *         "reactions": [
-     *             {
-     *                 "name": "full_moon_with_face",
-     *                 "users": [
-     *                     "U01234567"
-     *                 ],
-     *                 "count": 1
-     *             }
-     *         ]
-     *     }
+     *         "count": 1
+     *       }
+     *     ]
+     *   }
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>PinsComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `reactions:read`)</dd>
-     *   <dt>PinsComponent::OPTION_FILE</dt>
-     *     <dd>File to get reactions for.</dd>
-     *   <dt>PinsComponent::OPTION_FILE_COMMENT</dt>
-     *     <dd>File comment to get reactions for.</dd>
-     *   <dt>PinsComponent::OPTION_CHANNEL</dt>
-     *     <dd>Channel where the message to get reactions for was posted.</dd>
-     *   <dt>PinsComponent::OPTION_TIMESTAMP</dt>
-     *     <dd>Timestamp of the message to get reactions for.</dd>
-     *   <dt>PinsComponent::OPTION_FULL</dt>
-     *     <dd>If true always return the complete reaction list.</dd>
-     * </dl>
+     * ReactionsComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `reactions:read`)
+     * ReactionsComponent::OPTION_FILE
+     * :  File to get reactions for.
+     * ReactionsComponent::OPTION_FILE_COMMENT
+     * :  File comment to get reactions for.
+     * ReactionsComponent::OPTION_CHANNEL
+     * :  Channel where the message to get reactions for was posted.
+     * ReactionsComponent::OPTION_TIMESTAMP
+     * :  Timestamp of the message to get reactions for.
+     * ReactionsComponent::OPTION_FULL
+     * :  If true always return the complete reaction list.
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.
@@ -226,46 +222,46 @@ class ReactionsComponent extends BaseComponent
      * This method returns a list of all items (file, file comment, channel message, group message, or direct message) reacted to by a user.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Reactions->fetchList();
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "items": [
-     *         {
-     *             "type": "message",
-     *             "channel": "C01234567",
-     *             "message": {
-     *                 "user": "U01234567",
-     *                 "members": [
-     *                     "U01234567"
-     *                 ],
-     *                 "type": "message",
-     *                 "subtype": "channel_archive",
-     *                 "text": "<@U01234567|crepuscular> archived the channel (w/ 1 member)",
-     *                 "ts": "1440000000.000001",
-     *                 "permalink": "https://{your_team}.slack.com/archives/{channel_name}/p1440000000000001",
-     *                 "reactions": [
-     *                     {
-     *                         "name": "full_moon_with_face",
-     *                         "users": [
-     *                             "U01234567"
-     *                         ],
-     *                         "count": 1
-     *                     }
-     *                 ]
-     *             }
-     *         }
-     *     ],
-     *     "paging": {
-     *         "count": 100,
-     *         "total": 1,
-     *         "page": 1,
-     *         "pages": 1
+     *   "ok": true,
+     *   "items": [
+     *     {
+     *       "type": "message",
+     *       "channel": "C01234567",
+     *       "message": {
+     *         "user": "U01234567",
+     *         "members": [
+     *           "U01234567"
+     *         ],
+     *         "type": "message",
+     *         "subtype": "channel_archive",
+     *         "text": "<@U01234567|crepuscular> archived the channel (w/ 1 member)",
+     *         "ts": "1440000000.000001",
+     *         "permalink": "https://{your_team}.slack.com/archives/{channel_name}/p1440000000000001",
+     *         "reactions": [
+     *           {
+     *             "name": "full_moon_with_face",
+     *             "users": [
+     *               "U01234567"
+     *             ],
+     *             "count": 1
+     *           }
+     *         ]
+     *       }
      *     }
+     *   ],
+     *   "paging": {
+     *     "count": 100,
+     *     "total": 1,
+     *     "page": 1,
+     *     "pages": 1
+     *   }
      * }
      *
      * @param array $option オプション.
@@ -294,7 +290,7 @@ class ReactionsComponent extends BaseComponent
      * One of `file`, `file_comment`, or the combination of `channel` and `timestamp` must be specified.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Reactions->remove('full_moon_with_face',[
      *     ReactionsComponent::OPTION_CHANNEL => 'C01234567',
      *     ReactionsComponent::OPTION_TIMESTAMP => '1440000000.000001'
@@ -302,9 +298,9 @@ class ReactionsComponent extends BaseComponent
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true
+     *   "ok": true
      * }
      *
      * @param string $name 絵文字名.

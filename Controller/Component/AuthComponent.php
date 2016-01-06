@@ -38,29 +38,27 @@ class AuthComponent extends BaseComponent
      * This method checks authentication and tells you who you are.
      *
      * ### Eg.
-     * ```
+     * ``` {.prettyprint .lang-php}
      * $Auth->auth([
      *     AuthComponent::OPTION_TOKEN => `'xxxx-xxxxxxxxx-xxxx'`,
      * ]);
      * ```
      *
      * ### Response.
-     * ```
+     * ``` {.prettyprint .lang-js}
      * {
-     *     "ok": true,
-     *     "url": "https:\/\/myteam.slack.com\/",
-     *     "team": "My Team",
-     *     "user": "cal",
-     *     "team_id": "T12345",
-     *     "user_id": "U12345"
+     *   "ok": true,
+     *   "url": "https:\/\/myteam.slack.com\/",
+     *   "team": "My Team",
+     *   "user": "cal",
+     *   "team_id": "T12345",
+     *   "user_id": "U12345"
      * }
      * ```
      *
      * ### Use Option.
-     * <dl class="tree">
-     *   <dt>AuthComponent::OPTION_TOKEN</dt>
-     *     <dd>Authentication token (Requires scope: `identify`)</dd>
-     * </dl>
+     * AuthComponent::OPTION_TOKEN
+     * :  Authentication token (Requires scope: `identify`)
      *
      * @param array $option オプション.
      * @return mixed レスポンスデータ.
