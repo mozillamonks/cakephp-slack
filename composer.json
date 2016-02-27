@@ -1,5 +1,5 @@
 {
-    "name": "hiroki-yagyu/slack",
+    "name": "mozillamonks/cakephp-slack",
     "description": "CakePHP Slack WebAPI plugin.",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "slack"],
